@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
-  images:{
-    domains:['github.com']
+  experimental: {
+    appDir: true,
+  },
+  images: {
+    domains: ['github.com']
   }
 }
 
