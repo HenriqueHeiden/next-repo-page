@@ -9,9 +9,9 @@ export const consulta = async (email: string) => {
              email: email
         }
 
-    const collection = await banco.collection('linktree')
+    const collection = await banco?.collection('linktree')
 
-    const response = await collection.find(user).sort({ published: -1 }).toArray();
+    const response = await collection?.find(user)?.sort({ published: -1 })?.toArray();
 
     return response  
     } catch (error) {
