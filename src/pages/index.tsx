@@ -13,6 +13,7 @@ import { AiFillFire } from 'react-icons/ai'
 
 export async function getServerSideProps(context) {
   const id = context.query.id;
+  const IP_CONNECTION = process?.env?.IP_CONNECTION
   let body = JSON.stringify({
     email: 'henrique.heiden@gmail.com'
   });
@@ -20,7 +21,7 @@ export async function getServerSideProps(context) {
 
   var authOptions = {
     method: "post",
-    url: 'http://localhost:3000/api/consulta',
+    url: `${IP_CONNECTION}/api/consulta`,
     data: body,
     headers: {
       "Content-Type": "application/json",
