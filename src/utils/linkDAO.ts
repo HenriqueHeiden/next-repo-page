@@ -3,16 +3,20 @@ import { ObjectId } from 'mongodb';
 
 
 export const consulta = async (email: string) => {
-    const { db } = await connect()
-    const user = {
-        email: email
-    }
+    try {
+        const banco = (await connect())?.db
+        const user = {
+             email: email
+        }
 
-    const collection = db.collection('linktree')
+    const collection = await banco.collection('linktree')
 
     const response = await collection.find(user).sort({ published: -1 }).toArray();
 
-    return response    
+    return response  
+    } catch (error) {
+       throw new Error('Erro banco')
+    }  
 }
 
 
