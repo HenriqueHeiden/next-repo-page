@@ -98,7 +98,7 @@ export default function Home(props) {
         {
           data.socials.map((link) => {
 
-            if (link.href.includes('twitter')) {
+            if (false && link.href.includes('twitter')) {
               return (
                 <>
                   <TwitterLogo size={32} color="#28879f" />
@@ -106,7 +106,7 @@ export default function Home(props) {
               )
             }
 
-            if (link.href.includes('github')) {
+            if (false && link.href.includes('github')) {
               return (
                 <>
                   <GithubLogo size={32} color="#28879f" />
